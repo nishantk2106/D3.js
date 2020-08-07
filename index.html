@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3: Create SVG and Load CSV Data</title>
+		<script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>
+		<style type="text/css">
+
+			body {
+				background-color: black;
+			}
+
+			svg {
+				background-color: white;
+			}
+			
+			.container{
+				 max-width: 500px;
+				 padding: 20px;
+				 margin: 0 auto;
+			}
+            #myButton{
+				text-align: center;
+				float:right; 
+			}
+		</style>
+	</head>
+	<body>
+				
+		<script type="text/javascript">
+
+			//Width and height
+			var w = 550;
+			var h = 500;
+			var barPadding = 1;
+			
+			var dataset = [
+			{
+				x: 5,
+				y: 25,
+				fill: "blue",
+				text:"My project in D3"   
+			},
+			{
+				x: 5,
+				y: 125,
+				fill: "orange",
+				text:"with google Sever log Dataset"
+			},
+			{
+				x: 5,
+				y: 225,
+				fill: "purple",
+				text:"the Graphs are plotted for the task replacement"
+			},
+			{
+				x: 5,
+				y: 325,
+				fill: "teal",
+				text:" Nishant kumar",
+			},
+			{
+				x: 5,
+				y: 425,
+				fill: "red",
+                text:"The graph can be seen here "
+			}
+		];
+	
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("div")
+						.attr("class","container")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			svg.selectAll("rect")
+			   .data(dataset)
+			   .enter()
+			   .append("rect")
+			   .attr('height',50)
+			   .attr('width',1)
+			   .attr("fill","#fff")
+			   .transition()
+			   .delay(function(d,i){return i * 2000;})
+			   .duration(2000)
+			   .attr('width',525)
+			   .attr("x", function(d) {
+				   return d.x;
+			   })
+			   .attr("y", function(d) {
+				   return d.y;
+			   })
+			   .attr("rx",15)
+			   .attr("ry",15)
+			   .attr("fill", function(d) {
+				   return "teal";
+			   });
+
+			   svg.selectAll("text")
+			   .data(dataset)
+			   .enter()
+			   .append("text")
+			   .text(function(d) {
+			   		return d.text;
+			   })
+			   .attr("fill","white")
+			   .transition()
+			   .duration(2000)
+			   .attr("fill","white")
+			   .attr("x",15)
+			   .attr("y", function(d) {
+			   return d.y + 30;
+			   });
+			   
+			   d3.csv("github-api-visualization-cleaned.csv", function(data) {
+				console.log(data);
+				
+			});
+			
+		</script>
+		<button onclick="location.href = 'graph.html' " id="myButton" class="submit-button" >Next</button>
+    </body>
+</html>
+
