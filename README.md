@@ -14,4 +14,5 @@ How to run the set of code to run it locally.
 
 Start a local web server to see my work. To do this, navigate to this folder in your terminal and run the command python -m SimpleHTTPServer (Python 2.x) or python -m http.server (Python 3.x). Then, go to localhost:8000 in your browser.
 
-
+How the first page will loook when the code is up and runnig in the local system.
+![ScreenShot](/first_page.JPG)
