@@ -9,10 +9,12 @@ index1.js: this is the important file. All your D3 code are placed in here .
 part1.csv: data file, obtained from processing the server log data From the ICHEC server using spark.
 graph.html:A simple html describing about the project name wth author and superviors name 
 
-
-How to run the set of code to run it locally.
+# How to run the set of code to run it locally.
 
 Start a local web server to see my work. To do this, navigate to this folder in your terminal and run the command python -m SimpleHTTPServer (Python 2.x) or python -m http.server (Python 3.x). Then, go to localhost:8000 in your browser.
 
-How the first page will loook when the code is up and runnig in the local system.
+# How the first page will look when the code is up and running in the local system.
 ![ScreenShot](/first_page.JPG)
+
+# How the visualization page will look when the code is up and running in the local system.
+![ScreenShot](/final_parallel_coordinate_plot.JPG)
