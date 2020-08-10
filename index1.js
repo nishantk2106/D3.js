@@ -55,7 +55,7 @@ var dimensions = [
     },
     {
       key: "cpu_id",
-      description: "cpu_id",
+      description: "cpu_usage",
       type: types["Number"]
     },
     {
@@ -98,11 +98,11 @@ var canvas = container.append("canvas")
 
 
 var columns = [
-        { head: 'time', cl: 'title', key: 'time' },
-        { head: 'event_type', cl: 'num', key: 'event_type'},
-        { head: 'cpu_id', cl: 'num', key: 'cpu_id'},
-        { head: 'disk_usage', cl: 'num', key: 'disk_usage'},
-        { head: 'memory_usage', cl: 'num', key: 'memory_usage'}
+        { head: 'Time', cl: 'title', key: 'time' },
+        { head: 'Event_type', cl: 'num', key: 'event_type'},
+        { head: 'CPU', cl: 'num', key: 'cpu_id'},
+        { head: 'Disk_usage', cl: 'num', key: 'disk_usage'},
+        { head: 'Memory_usage', cl: 'num', key: 'memory_usage'}
     ];
 
 var table = d3.select("body")
